@@ -27,11 +27,11 @@ namespace TravelingSalesmanWpf.Managers
                 double locationToFirst = city.Location.DistanceTo(city1.Location);
                 double locationToSecond = city.Location.DistanceTo(city2.Location);
 
-                if (locationToFirst > locationToSecond)
-                    return -1; //city2 closer
-
                 if (locationToFirst < locationToSecond)
-                    return 1; //city1 closer
+                    return -1; //city1 closer
+
+                if (locationToFirst > locationToSecond)
+                    return 1; //city2 closer
 
 
                 return 0;

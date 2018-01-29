@@ -3,98 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TravelingSalesmanWpf"
+        xmlns:local="clr-namespace:TravelingSalesmanWpf.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" Initialized="OnWindowInitialized">
-    <Grid Name="MainGrid">
-        <Grid Name="CartesianGrid"  Margin="0,39,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-        </Grid>
-        <CheckBox Content="Show grid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        Title="MainWindow" Height="190" Width="305" ResizeMode="CanMinimize">
+    <Grid>
+        <GroupBox Header="Configuration" HorizontalAlignment="Left" Height="99" Margin="10,10,0,0" VerticalAlignment="Top" Width="275"/>
+        <Label Content="City" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,25,0,0" RenderTransformOrigin="1.167,0.385"/>
+        <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="203,114,5,5" VerticalAlignment="Top" Width="81" Height="28" Click="StartButton_Click" />
+        <TextBox x:Name="CityCountTextBox" Text="0" HorizontalAlignment="Left" Height="23" Margin="21,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" ToolTip="Higher = slower" PreviewTextInput="AreAllCharactersNumeric"/>
+        <TextBox x:Name="RowCountTextBox" Text="0" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Margin="122,51,0,0" PreviewTextInput="AreAllCharactersNumeric"/>
+        <TextBox x:Name="ColumnCountTextBox" Text="0" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Margin="181,51,0,0" PreviewTextInput="AreAllCharactersNumeric"/>
+        <Label Content="Row" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="122,25,0,0"/>
+        <Label Content="Column" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="181,25,0,0"/>
     </Grid>
 </Window>

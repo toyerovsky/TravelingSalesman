@@ -7,15 +7,16 @@ namespace TravelingSalesmanWpf.Seed
 {
     public static class CitySeed
     {
-        public static List<City> SeedData(int count)
+        public static List<City> SeedData(int count, int maxRow, int maxColumn)
         {
             List<City> cities = new List<City>();
             Random random = new Random();
 
             for (int i = 0; i < count; i++)
             {
-                var x = random.Next() % 1001 - 500;
-                var y = random.Next() % 1001 - 500;
+                var x = random.Next() % maxColumn;
+                var y = random.Next() % maxRow;
+                
                 cities.Add(new City()
                 {
                    Location = new Point(x, y),

@@ -1,7 +1,6 @@
-﻿using System;
+﻿using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
+using System.Windows.Input;
 
 namespace TravelingSalesmanWpf.View
 {
@@ -15,62 +14,25 @@ namespace TravelingSalesmanWpf.View
             InitializeComponent();
         }
 
-        private void OnWindowInitialized(object sender, EventArgs e)
+        private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            DrawGrid();
+            if (!int.TryParse(ColumnCountTextBox.Text, out int columnCount) ||
+                !int.TryParse(RowCountTextBox.Text, out int rowCount) ||
+                !int.TryParse(CityCountTextBox.Text, out int cityCount)) return;
+
+            if (rowCount * columnCount < cityCount)
+            {
+                MessageBox.Show($"City count must be lower or equal to {rowCount * columnCount}.");
+                return;
+            }
+
+            new AnimationWindow(cityCount, rowCount, columnCount).Show();
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        private void AreAllCharactersNumeric(object sender, TextCompositionEventArgs e)
         {
-            foreach (var children in CartesianGrid.Children)
-            {
-                if (children is Border border)
-                    border.Visibility = Visibility.Visible;
-            }
-        }
-
-        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            foreach (var children in CartesianGrid.Children)
-            {
-                if (children is Border border)
-                    border.Visibility = Visibility.Hidden;
-            }
-        }
-
-        private void DrawGrid()
-        {
-            int rowCount = CartesianGrid.RowDefinitions.Count;
-            int columnCount = CartesianGrid.ColumnDefinitions.Count;
-
-            //Drawing grid
-            for (int i = 0; i < rowCount; i++)
-            {
-                for (int j = 0; j < columnCount; j++)
-                {
-                    Border border = new Border
-                    {
-                        BorderThickness = new Thickness(0,
-                            i == 0 ? 1 : 0, j == columnCount ? 0 : 1, 1),
-                        BorderBrush = new SolidColorBrush(new Color()
-                        {
-                            A = 100,
-                            R = 0,
-                            G = 0,
-                            B = 0
-                        }),
-                        Visibility = Visibility.Hidden,
-                        Width = CartesianGrid.Width / CartesianGrid.ColumnDefinitions.Count,
-                        Height = CartesianGrid.Height / CartesianGrid.RowDefinitions.Count
-                    };
-
-
-                    Grid.SetRow(border, i);
-                    Grid.SetColumn(border, j);
-
-                    CartesianGrid.Children.Add(border);
-                }
-            }
+            if (!e.Text.Any(char.IsDigit))
+                e.Handled = true;
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using TravelingSalesmanWpf.Models;
+using TravelingSalesman.Models;
 
-namespace TravelingSalesmanWpf.Seed
+namespace TravelingSalesman.Seed
 {
     public static class CitySeed
     {

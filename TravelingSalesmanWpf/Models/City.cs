@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace TravelingSalesmanWpf.Models
+namespace TravelingSalesman.Models
 {
     [Serializable]
     public class City

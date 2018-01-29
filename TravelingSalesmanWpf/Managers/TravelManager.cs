@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using TravelingSalesmanWpf.Extensions;
-using TravelingSalesmanWpf.Models;
+using TravelingSalesman.Extensions;
+using TravelingSalesman.Models;
 
-namespace TravelingSalesmanWpf.Managers
+namespace TravelingSalesman.Managers
 {
     public class TravelManager
     {

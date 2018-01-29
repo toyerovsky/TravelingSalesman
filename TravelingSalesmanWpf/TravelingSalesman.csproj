@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C58083EB-45B8-43A8-B3BB-086D123B52EA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TravelingSalesmanWpf</RootNamespace>
-    <AssemblyName>TravelingSalesmanWpf</AssemblyName>
+    <RootNamespace>TravelingSalesman</RootNamespace>
+    <AssemblyName>TravelingSalesman</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 
-namespace TravelingSalesmanWpf.View
+namespace TravelingSalesman.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

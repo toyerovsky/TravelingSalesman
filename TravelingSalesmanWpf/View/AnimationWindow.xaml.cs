@@ -6,11 +6,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using TravelingSalesmanWpf.Managers;
-using TravelingSalesmanWpf.Models;
-using TravelingSalesmanWpf.Seed;
+using TravelingSalesman.Managers;
+using TravelingSalesman.Models;
+using TravelingSalesman.Seed;
 
-namespace TravelingSalesmanWpf.View
+namespace TravelingSalesman.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

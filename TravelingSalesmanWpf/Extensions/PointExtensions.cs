@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace TravelingSalesmanWpf.Extensions
+namespace TravelingSalesman.Extensions
 {
     public static class PointExtensions
     {

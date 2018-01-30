@@ -54,18 +54,19 @@ namespace TravelingSalesman.View
         {
             Point firstPoint = CartesianGrid.Children.Cast<UIElement>().First(r =>
                 r is Rectangle && Grid.GetRow(r) == (int)first.Location.Y &&
-                Grid.GetColumn(r) == (int)first.Location.X).PointToScreen(new Point(0, 0));
+                Grid.GetColumn(r) == (int)first.Location.X).TransformToAncestor(this).Transform(new Point(0, 0));
 
             Point secondPoint = CartesianGrid.Children.Cast<UIElement>().First(r =>
                 r is Rectangle && Grid.GetRow(r) == (int)second.Location.Y &&
-                Grid.GetColumn(r) == (int)second.Location.X).PointToScreen(new Point(0, 0));
+                Grid.GetColumn(r) == (int)second.Location.X).TransformToAncestor(this).Transform(new Point(0, 0));
+
 
             Line line = new Line
             {
                 X1 = firstPoint.X + ActualWidth / CartesianGrid.ColumnDefinitions.Count / 2,
-                Y1 = firstPoint.Y - ActualHeight / CartesianGrid.RowDefinitions.Count,
+                Y1 = firstPoint.Y + ActualHeight / CartesianGrid.RowDefinitions.Count / 2,
                 X2 = secondPoint.X + ActualWidth / CartesianGrid.ColumnDefinitions.Count / 2,
-                Y2 = secondPoint.Y - ActualHeight / CartesianGrid.RowDefinitions.Count,
+                Y2 = secondPoint.Y + ActualHeight / CartesianGrid.RowDefinitions.Count / 2,
                 Stroke = new SolidColorBrush(new Color()
                 {
                     A = 150,
@@ -81,7 +82,7 @@ namespace TravelingSalesman.View
             Grid.SetColumnSpan(line, CartesianGrid.ColumnDefinitions.Count);
 
             CartesianGrid.Children.Add(line);
-            return Task.Delay(500);
+            return Task.Delay(1000);
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)

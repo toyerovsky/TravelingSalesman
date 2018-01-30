@@ -20,6 +20,9 @@ namespace TravelingSalesman.View
                 !int.TryParse(RowCountTextBox.Text, out int rowCount) ||
                 !int.TryParse(CityCountTextBox.Text, out int cityCount)) return;
 
+            if (columnCount == 0 || rowCount == 0 || cityCount == 0)
+                return;
+
             if (rowCount * columnCount < cityCount)
             {
                 MessageBox.Show($"City count must be lower or equal to {rowCount * columnCount}.");
